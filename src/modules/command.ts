@@ -55,3 +55,33 @@ export async function sendToQsub(uri: vscode.Uri, range: vscode.Range, firstWord
     command = command.replace('${title}', firstWord);
     terminal.sendText(`${command}`);
 }
+
+export async function iterToTerminal(uri: vscode.Uri, range: vscode.Range, firstWord: string) {
+	const document = await vscode.workspace.openTextDocument(uri);
+	const code = document.getText(range);
+	const input = await vscode.window.showInputBox({ prompt: 'Enter iter body to run code chunk; eg: i={1..10} / i=1 3 4 5\n' , placeHolder: 'i={1..10}' });
+	if (!input) {
+		return;
+	}
+    // 使用正则表达式验证输入格式是否为 xx=xxxx
+    const regex = /^(\w+)\s*=\s*(.+)$/;
+    const match = input.match(regex);
+
+    if (!match) {
+        vscode.window.showErrorMessage('Invalid format! Input must be in the format iter=iter_range.');
+        return;
+    }
+    // 提取变量名和值，去除空格
+    const variableName = match[1].trim();
+    const variableValue = match[2].trim();
+	const modifiedCode = `(# Iter code: ${input}\nfor ${variableName} in ${variableValue};do\n ${code}\ndone\n)`;
+    // 插入用户输入到原文件中
+    const edit = new vscode.WorkspaceEdit();
+    const position = new vscode.Position(range.start.line + 1, 0); // 在选定范围下方一行的起始位置插入
+    edit.insert(uri, position, `# Iter: ${input}\n`);
+
+    await vscode.workspace.applyEdit(edit);
+	const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
+	terminal.show();
+	terminal.sendText(modifiedCode);
+}

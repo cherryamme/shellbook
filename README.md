@@ -1,15 +1,21 @@
 # Shell Book - The Shell notebook  Extension for VSCode
+<img src="./Shellbook.png" alt="Description of Image" style="width:100px;"/>
+
 [中文README](./README_ZH.md)
+
+
 Make your shell script as easy to use as a notebook, display code chunks, add snippets, enhance shell script development experience, and quickly execute custom commands.
 
 ## Features
 
 1. **Code Chunk**: show chunk in shell script, send chunk code to terminal for running or qsub to SGE.
 2. **Code Snippets**: Quickly insert commonly used shell commands and structures into your script with our pre-built code snippets.
-3. **Auto-format**: Fast format your shell script.
-4. **Chunk Outline**: You can see your chunk outline in left panel, double click to check in.
-5. **Quick Command**: Execute shell commands directly within the VSCode interface, just click Shell Command in statusBar.
-6. **Customization**: Customize Shell Book's settings and appearance to match your preferences and coding style.
+3. **Iterate Code Chunks**: Easily iterate over code chunks and execute them directly in the terminal, streamlining your workflow.
+4. **qsub in SGE**: Easily run your code in SGE cluster use Send to qsub codelens.
+5. **Auto-format**: Fast format your shell script, just use right click and choose format.
+6. **Chunk Outline**: You can see your chunk outline in left panel, double click to check in.
+7. **Quick Command**: Execute shell commands directly within the VSCode interface, just click Shell Command in statusBar.
+8. **Customization**: Customize Shell Book's settings and appearance to match your preferences and coding style.
 
 ## Installation
 
@@ -22,14 +28,29 @@ Make your shell script as easy to use as a notebook, display code chunks, add sn
 
 ### Code Chunk
 type in `code` or `chunk` to use.
-![usage](./usage1.png)
+![shellbook_codechunkrun](./shellbook_codechunkrun.gif)
+
+use timer mode
+![shellbook_codechunktimer_run](./shellbook_codechunktimer_run.gif)
+
+
+use qsub mode
+![shellbook_codechunk_qsubrun](./shellbook_codechunk_qsubrun.gif)
+
+use iter mode
+![shellbook_codechunkiter_run](./shellbook_codechunkiter_run.gif)
+
+
+### outliner
+![shellbook_ouline](./shellbook_ouline.gif)
 
 ### Shell Command
 click Shell Command in statusBar. add your custom command.
-![usage](./usage2.png)
+![shellbook_quickcommand](./shellbook_quickcommand.gif)
 
 ### Shell Format
 right click Document and choose format Document.
+![shellbook_quickcommand](./shellbook_codeformatter.gif)
 
 
 
