@@ -143,14 +143,11 @@ $output/input/runall.sh
 echo this is step5
 ###
 
-stepon step6
+stepon step7
 sleep 5
 echo this is step6
-stepoff step6
+stepoff step7
 
 ### step7
-# Iter: jobid= 1 3 5 7 9
-# Iter: jobid={1..10}
-echo this is job $jobid
-
+echo process sample:$sample path:$path num:$num
 ###

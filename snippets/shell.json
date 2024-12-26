@@ -18,7 +18,7 @@
         "description": "Code chunk with timer"
     },
     "Code chunk timer summarize": {
-        "prefix": "stepall",
+        "prefix": ["stepall","codechunk timer summarise"],
         "body": [
             "stepall"
         ],

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { QuickPickItem, window, Terminal } from 'vscode';
 import {addFunctionsToBashrc} from './modules/loading';
-import { sendToTerminal,sendToQsub, iterToTerminal,createQuickPick,createStatusBarItem,ADD_COMMAND } from "./modules/command";
+import { sendToTerminal,sendToQsub, iterToTerminal,iterFile, createQuickPick,createStatusBarItem,ADD_COMMAND } from "./modules/command";
 import { log } from "./modules/logging";
 import { settings,updateSettings } from "./modules/config";
 import { RunShellCodeLensProvider,updateDecorations } from "./modules/codechunk";
@@ -38,7 +38,9 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('shellbook.sendToTerminal', sendToTerminal));
     // Register the 'extension.iterToTerminal' command
     context.subscriptions.push(vscode.commands.registerCommand('shellbook.iterToTerminal', iterToTerminal));
-    
+    // Register the 'extension.addBashFunctions' command
+    context.subscriptions.push(vscode.commands.registerCommand('shellbook.iterFile', iterFile));
+
     const runShellDocumentSymbolProvider = new RunShellDocumentSymbolProvider();
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider({ language: 'shellscript' },runShellDocumentSymbolProvider));
 

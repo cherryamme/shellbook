@@ -56,15 +56,23 @@ export class RunShellCodeLensProvider implements vscode.CodeLensProvider {
 
             arguments: [document.uri, range, title]
           });
-
-          this.codeLenses.push(sendToTerminalCodeLens);
-          this.codeLenses.push(sendToQsubCodeLens);
+          // iter_to_terminal CodeLens
           const iterToTerminalCodeLens = new vscode.CodeLens(range, {
             title: 'Iter to Terminal',
             command: 'shellbook.iterToTerminal',
             arguments: [document.uri, range, title]
           });
+          // iter_file CodeLens
+          const iterFileCodeLens = new vscode.CodeLens(range, {
+            title: 'IterFile to Terminal',
+            command: 'shellbook.iterFile',
+            arguments: [document.uri, range, title]
+          });
+
+          this.codeLenses.push(sendToTerminalCodeLens);
+          this.codeLenses.push(sendToQsubCodeLens);
           this.codeLenses.push(iterToTerminalCodeLens);
+          this.codeLenses.push(iterFileCodeLens);
           codeChunkRanges.push(new vscode.Range(startLines[chunkEnd.id], 0, endLines[chunkEnd.id], lines[endLines[chunkEnd.id]].length));
 
         }
