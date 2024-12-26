@@ -20,29 +20,39 @@
 ## 使用方法
 
 ### 代码框
-type in `code` or `chunk` to use.
+#### type in `code` or `chunk` to use
+normal use in record your runnable code.(gif)
 ![shellbook_codechunkrun](./shellbook_codechunkrun.gif)
 
-use timer mode: 计时模式
+#### use timer mode: 计时模式
+use timer mode to record your code running time.(gif), can use stepall to show all record time.
 ![shellbook_codechunktimer_run](./shellbook_codechunktimer_run.gif)
 
 
-use qsub mode: 集群投递模式
+#### use qsub mode: 集群投递模式
+use qsub mode to send your code to SGE cluster.(gif)
 ![shellbook_codechunk_qsubrun](./shellbook_codechunk_qsubrun.gif)
 
-use iter mode: 循环迭代模式
+#### use iter mode: 循环迭代模式
+use iter mode to iter run your codechunk by a variable.(gif)
 ![shellbook_codechunkiter_run](./shellbook_codechunkiter_run.gif)
+
+#### use iterfile mode
+use iterfile mode to iter run your codechunk by a file.(gif)
+![shellbook_codechunkiterfile_run](./shellbook_codechunkiterfile_run.gif)
+
 
 
 ### outliner： 代码框目录
+check all your chunk in left panel.(gif)
 ![shellbook_ouline](./shellbook_ouline.gif)
 
 ### Shell Command：快捷命令
-click Shell Command in statusBar. add your custom command.
+click Shell Command in statusBar. add your custom command.(gif)
 ![shellbook_quickcommand](./shellbook_quickcommand.gif)
 
 ### Shell Format：shell脚本格式化
-right click Document and choose format Document.
+right click Document and choose format Document.(gif)
 ![shellbook_quickcommand](./shellbook_codeformatter.gif)
 
 ## 贡献

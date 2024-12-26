@@ -45,7 +45,7 @@ use iter mode to iter run your codechunk by a variable.(gif)
 
 #### use iterfile mode
 use iterfile mode to iter run your codechunk by a file.(gif)
-![shellbook_codechunkiterfile_run](./shellbook_codechunkiterfile_run.gif.gif)
+![shellbook_codechunkiterfile_run](./shellbook_codechunkiterfile_run.gif)
 
 
 ### outliner
