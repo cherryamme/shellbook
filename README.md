@@ -5,7 +5,8 @@
 
 Make your shell script as easy to use as a notebook, display code chunks, add snippets, enhance shell script development experience, and quickly execute custom commands.
 
-**(作者)：**之前做R语言开发，觉得Rmarkdown特别方便，因此想在shell中实现一个类似的vscode扩展，已使用一年多，现在回看之前的shellbook，运行思路都很清晰,是代码运行、管理和协作很好的方案。
+**(作者)**：之前做R语言开发，觉得Rmarkdown特别方便，因此想在shell中实现一个类似的vscode扩展，已使用一年多，现在回看之前的shellbook，运行思路都很清晰,是代码运行、管理和协作很好的方案。
+
 **设计理念**是按执行单元记录，每个分析任务新建一个shell来运行，减少终端直接输入代码的频率，平时会用一个home目录下的.sh来写codechunk运行，可以在未来很方便的复用chunk单元（history里只能记录单行，codechunk记录的是一段执行单元）；协作上只需要提供该shell路径，即是完整的运行方案，不需要沟通如何操作。
 
 **(Author)**: Previously, I worked with R language development and found RMarkdown particularly convenient. Therefore, I wanted to implement a similar VSCode extension in the shell. I've been using it for over a year now, and looking back at the previous shellbook, the execution logic is very clear. It serves as an excellent solution for code execution, management, and collaboration.
