@@ -1,5 +1,11 @@
 # Shell Book - The Shell notebook  Extension for VSCode
+<img src="./assets/Shellbook.png" alt="Description of Image" style="width:100px;"/>
+
 让你的shell脚本像notebook一样好用，显示codechunk，添加snippets，增强shell脚本开发体验，快速执行自定义指令
+
+
+**(作者)：**之前做R语言开发，觉得Rmarkdown特别方便，因此想在shell中实现一个类似的vscode扩展，已使用一年多，现在回看之前的shellbook，运行思路都很清晰,是代码运行、管理和协作很好的方案。
+**设计理念**是按执行单元记录，每个分析任务新建一个shell来运行，减少终端直接输入代码的频率，平时会用一个home目录下的.sh来写codechunk运行，可以在未来很方便的复用chunk单元（history里只能记录单行，codechunk记录的是一段执行单元）；协作上只需要提供该shell路径，即是完整的运行方案，不需要沟通如何操作。
 
 1. **代码块**：在shell脚本中显示块，将块代码发送到终端以运行或将qsub发送到SGE。
 2. **代码片段**：使用我们的预构建代码片段快速插入常用的shell命令和结构到您的脚本中。
@@ -22,42 +28,44 @@
 ### 代码框
 #### type in `code` or `chunk` to use
 normal use in record your runnable code.(gif)
-![shellbook_codechunkrun](./shellbook_codechunkrun.gif)
+![shellbook_codechunkrun](./assets/shellbook_codechunkrun.gif)
 
 #### use timer mode: 计时模式
 use timer mode to record your code running time.(gif), can use stepall to show all record time.
-![shellbook_codechunktimer_run](./shellbook_codechunktimer_run.gif)
+![shellbook_codechunktimer_run](./assets/shellbook_codechunktimer_run.gif)
 
 
 #### use qsub mode: 集群投递模式
 use qsub mode to send your code to SGE cluster.(gif)
-![shellbook_codechunk_qsubrun](./shellbook_codechunk_qsubrun.gif)
+![shellbook_codechunk_qsubrun](./assets/shellbook_codechunk_qsubrun.gif)
 
 #### use iter mode: 循环迭代模式
 use iter mode to iter run your codechunk by a variable.(gif)
-![shellbook_codechunkiter_run](./shellbook_codechunkiter_run.gif)
+![shellbook_codechunkiter_run](./assets/shellbook_codechunkiter_run.gif)
 
 #### use iterfile mode
 use iterfile mode to iter run your codechunk by a file.(gif)
-![shellbook_codechunkiterfile_run](./shellbook_codechunkiterfile_run.gif)
+![shellbook_codechunkiterfile_run](./assets/shellbook_codechunkiterfile_run.gif)
 
 
 
 ### outliner： 代码框目录
 check all your chunk in left panel.(gif)
-![shellbook_ouline](./shellbook_ouline.gif)
+![shellbook_ouline](./assets/shellbook_ouline.gif)
 
 ### Shell Command：快捷命令
 click Shell Command in statusBar. add your custom command.(gif)
-![shellbook_quickcommand](./shellbook_quickcommand.gif)
+![shellbook_quickcommand](./assets/shellbook_quickcommand.gif)
 
 ### Shell Format：shell脚本格式化
 right click Document and choose format Document.(gif)
-![shellbook_quickcommand](./shellbook_codeformatter.gif)
+![shellbook_quickcommand](./assets/assets/shellbook_codeformatter.gif)
 
 ## 贡献
 
 我们欢迎您为改进Shell book做出贡献！如果您有任何想法或建议，请随时在我们的GitHub仓库上提交问题或拉取请求。
+
+或者邮件联系我：cherryamme@qq.com
 
 ## 许可证
 

@@ -1,10 +1,16 @@
 # Shell Book - The Shell notebook  Extension for VSCode
-<img src="./Shellbook.png" alt="Description of Image" style="width:100px;"/>
+<img src="./assets/Shellbook.png" alt="Description of Image" style="width:100px;"/>
 
 [中文README](./README_ZH.md)
 
-
 Make your shell script as easy to use as a notebook, display code chunks, add snippets, enhance shell script development experience, and quickly execute custom commands.
+
+**(作者)：**之前做R语言开发，觉得Rmarkdown特别方便，因此想在shell中实现一个类似的vscode扩展，已使用一年多，现在回看之前的shellbook，运行思路都很清晰,是代码运行、管理和协作很好的方案。
+**设计理念**是按执行单元记录，每个分析任务新建一个shell来运行，减少终端直接输入代码的频率，平时会用一个home目录下的.sh来写codechunk运行，可以在未来很方便的复用chunk单元（history里只能记录单行，codechunk记录的是一段执行单元）；协作上只需要提供该shell路径，即是完整的运行方案，不需要沟通如何操作。
+
+**(Author)**: Previously, I worked with R language development and found RMarkdown particularly convenient. Therefore, I wanted to implement a similar VSCode extension in the shell. I've been using it for over a year now, and looking back at the previous shellbook, the execution logic is very clear. It serves as an excellent solution for code execution, management, and collaboration.
+
+**Design Concept**: It records according to execution units, creating a new shell for each analysis task to run. This reduces the frequency of directly entering code into the terminal. Usually, I write code chunks in a .sh file in the home directory for execution, which allows for easy reuse of chunk units in the future (since the history can only record single lines, while code chunks record an entire execution unit). For collaboration, you only need to provide the shell path, which serves as a complete execution plan, eliminating the need to communicate on how to operate it.
 
 ## Features
 
@@ -29,42 +35,44 @@ Make your shell script as easy to use as a notebook, display code chunks, add sn
 ### Code Chunk
 #### type in `code` or `chunk` to use
 normal use in record your runnable code.(gif)
-![shellbook_codechunkrun](./shellbook_codechunkrun.gif)
+![shellbook_codechunkrun](./assets/shellbook_codechunkrun.gif)
 
 #### use timer mode
 use timer mode to record your code running time.(gif), can use stepall to show all record time.
-![shellbook_codechunktimer_run](./shellbook_codechunktimer_run.gif)
+![shellbook_codechunktimer_run](./assets/shellbook_codechunktimer_run.gif)
 
 #### use qsub mode
 use qsub mode to send your code to SGE cluster.(gif)
-![shellbook_codechunk_qsubrun](./shellbook_codechunk_qsubrun.gif)
+![shellbook_codechunk_qsubrun](./assets/shellbook_codechunk_qsubrun.gif)
 
 #### use iter mode
 use iter mode to iter run your codechunk by a variable.(gif)
-![shellbook_codechunkiter_run](./shellbook_codechunkiter_run.gif)
+![shellbook_codechunkiter_run](./assets/shellbook_codechunkiter_run.gif)
 
 #### use iterfile mode
 use iterfile mode to iter run your codechunk by a file.(gif)
-![shellbook_codechunkiterfile_run](./shellbook_codechunkiterfile_run.gif)
+![shellbook_codechunkiterfile_run](./assets/shellbook_codechunkiterfile_run.gif)
 
 
 ### outliner
 check all your chunk in left panel.(gif)
-![shellbook_ouline](./shellbook_ouline.gif)
+![shellbook_ouline](./assets/shellbook_ouline.gif)
 
 ### Shell Command
 click Shell Command in statusBar. add your custom command.(gif)
-![shellbook_quickcommand](./shellbook_quickcommand.gif)
+![shellbook_quickcommand](./assets/shellbook_quickcommand.gif)
 
 ### Shell Format
 right click Document and choose format Document.(gif)
-![shellbook_quickcommand](./shellbook_codeformatter.gif)
+![shellbook_quickcommand](./assets/shellbook_codeformatter.gif)
 
 
 
 ## Contributing
 
 We welcome contributions to improve Shell book! If you have any ideas or suggestions, please feel free to submit an issue or a pull request on our GitHub repository.
+
+or contact me with email:  cherryamme@qq.com
 
 ## License
 
