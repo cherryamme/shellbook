@@ -37,7 +37,7 @@ export class RunShellCodeLensProvider implements vscode.CodeLensProvider {
       if (chunkStart && isStart[chunkStart.id]) {
         startLines[chunkStart.id] = lineNumber;
         // Extract the first word after 'start'
-        title = line.trimStart().split(/\s+/)[1] || "null";
+        title = line.trimStart().split(/\s+/)[1] || "shellbook_run";
         isStart[chunkStart.id] = false;
       } else if (chunkEnd) {
         endLines[chunkEnd.id] = lineNumber;
