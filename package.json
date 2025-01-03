@@ -3,7 +3,7 @@
   "publisher": "cherryamme",
   "displayName": "Shell Book",
   "description": "让你的shell脚本像notebook一样好用，显示codechunk，添加snippets，增强shell脚本开发体验，快速执行自定义指令",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "icon": "assets/Shellbook.png",
   "repository": {
     "type": "git",
@@ -40,6 +40,26 @@
     "configuration": {
       "title": "shellbook",
       "properties": {
+        "shellbook.codelens.sendToTerminal": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable code lens for sending shell code blocks to the terminal."
+      },
+      "shellbook.codelens.sendToQsub": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable code lens for sending shell code blocks to qsub."
+      },
+      "shellbook.codelens.iterToTerminal": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable code lens for iterative shell runs."
+      },
+      "shellbook.codelens.iterFile": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable code lens for iterative file-based runs."
+      },
         "shellbook.chunkbackgroudcolor": {
           "type": "string",
           "default": "rgba(56, 56, 56, 0.5)",
