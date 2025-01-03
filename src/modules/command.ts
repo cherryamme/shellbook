@@ -103,7 +103,7 @@ export async function iterFile(uri: vscode.Uri, range: vscode.Range, firstWord: 
 
     // Step 3: Prompt for column name
     const columnName = await vscode.window.showInputBox({
-        prompt: 'Enter the column name to iterate over, variable in codechunk to iter',
+        prompt: 'Enter the column name to iterate over, variable in codechunk to iter (use tab or blank)',
         ignoreFocusOut: true,
         placeHolder: 'column1 column2 column3',
     });
@@ -114,7 +114,7 @@ export async function iterFile(uri: vscode.Uri, range: vscode.Range, firstWord: 
         return;
     }
     // Replace commas with spaces, split by spaces, and filter out empty strings
-    const variablesArray = columnName.replace(/,/g, ' ').split(' ').map(v => v.trim()).filter(v => v !== '');
+    const variablesArray = columnName.replace(/,/g, ' ').split(/\s+/).map(v => v.trim()).filter(v => v !== '');
 
     // Join the array back into a space-separated string for use in the shell script
     const variables = variablesArray.join(' ');
