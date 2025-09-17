@@ -11,11 +11,12 @@
 1. **代码块**：在shell脚本中显示块，将块代码发送到终端以运行或将qsub发送到SGE。
 2. **代码片段**：使用我们的预构建代码片段快速插入常用的shell命令和结构到您的脚本中。
 3. **迭代代码块**：轻松迭代代码块并直接在终端中执行，简化您的工作流程。
-4. **SGE 中的 qsub**：使用“发送到 qsub”代码镜头轻松在 SGE 集群中运行您的代码。
+4. **SGE 中的 qsub**：使用"发送到 qsub"代码镜头轻松在 SGE 集群中运行您的代码。
 5. **自动格式化**：快速格式化您的shell脚本。
 6. **块大纲**：您可以在左侧面板中查看块大纲，双击以检查。
 7. **快速命令**：在VSCode界面中直接执行shell命令，只需单击状态栏中的Shell命令。
-8. **自定义**：根据您的喜好和编码风格自定义Shell Book的设置和外观。
+8. **独立Shell执行**：控制代码块是否在独立的子shell中运行（使用圆括号）或在当前shell中运行（使用花括号），提供更好的环境隔离。
+9. **自定义**：根据您的喜好和编码风格自定义Shell Book的设置和外观。
 
 ## 安装
 
@@ -48,7 +49,12 @@ use iter mode to iter run your codechunk by a variable.(gif)
 use iterfile mode to iter run your codechunk by a file.(gif)
 ![shellbook_codechunkiterfile_run](./assets/shellbook_codechunkiterfile_run.gif)
 
+#### 独立Shell执行模式
+通过 `runInIndependentShell` 设置控制代码块的执行方式：
+- **启用（默认：false）**：代码块在独立的子shell中使用圆括号 `()` 运行，提供更好的环境隔离
+- **禁用**：代码块在当前shell中使用花括号 `{}` 运行，允许变量持久化
 
+您可以在VSCode设置中的 `shellbook.runInIndependentShell` 下配置此设置。
 
 ### outliner： 代码框目录
 check all your chunk in left panel.(gif)

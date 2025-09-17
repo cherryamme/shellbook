@@ -22,7 +22,8 @@ Make your shell script as easy to use as a notebook, display code chunks, add sn
 5. **Auto-format**: Fast format your shell script, just use right click and choose format.
 6. **Chunk Outline**: You can see your chunk outline in left panel, double click to check in.
 7. **Quick Command**: Execute shell commands directly within the VSCode interface, just click Shell Command in statusBar.
-8. **Customization**: Customize Shell Book's settings and appearance to match your preferences and coding style.
+8. **Independent Shell Execution**: Control whether code chunks run in independent subshells (using parentheses) or current shell (using braces) for better environment isolation.
+9. **Customization**: Customize Shell Book's settings and appearance to match your preferences and coding style.
 
 ## Installation
 
@@ -54,6 +55,12 @@ use iter mode to iter run your codechunk by a variable.(gif)
 use iterfile mode to iter run your codechunk by a file.(gif)
 ![shellbook_codechunkiterfile_run](./assets/shellbook_codechunkiterfile_run.gif)
 
+#### Independent Shell Execution
+Control how your code chunks are executed with the `runInIndependentShell` setting:
+- **Enabled (default: false)**: Code chunks run in independent subshells using parentheses `()`, providing better environment isolation
+- **Disabled**: Code chunks run in the current shell using braces `{}`, allowing variable persistence
+
+You can configure this setting in VSCode settings under `shellbook.runInIndependentShell`.
 
 ### outliner
 check all your chunk in left panel.(gif)

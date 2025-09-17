@@ -62,12 +62,12 @@
       },
       "shellbook.runInIndependentShell": {
         "type": "boolean",
-        "default": true,
+        "default": false,
         "description": "Whether to run the code block in an independent shell. If checked, use parentheses (); otherwise, use curly braces {}.。"
       },
         "shellbook.chunkbackgroudcolor": {
           "type": "string",
-          "default": "rgba(56, 56, 56, 0.5)",
+          "default": "rgba(56, 56, 56, 0.05)",
           "description": "Customize the backgroud color for the chunk.",
           "scope": "window"
         },

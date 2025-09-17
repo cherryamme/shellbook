@@ -93,10 +93,10 @@ export class RunShellCodeLensProvider implements vscode.CodeLensProvider {
 }
 
 const codeChunkDecorationType = vscode.window.createTextEditorDecorationType({
-  backgroundColor: settings.chunkbackgroudcolor || "rgba(56, 56, 56, 0.1)",
-  border: "1px solid rgba(56, 56, 56, 0.2)",
+  backgroundColor: settings.chunkbackgroudcolor || "rgba(56, 56, 56, 0.05)",
   borderRadius: '3px',
-  isWholeLine: true
+  isWholeLine: true,
+  rangeBehavior: vscode.DecorationRangeBehavior.ClosedClosed
 });
 
 export async function updateDecorations(editor: vscode.TextEditor | undefined,provider: RunShellCodeLensProvider) {
