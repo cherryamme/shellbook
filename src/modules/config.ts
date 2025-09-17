@@ -9,6 +9,7 @@ export let settings = {
     sendToQsub: vscode.workspace.getConfiguration("shellbook").get("codelens.sendToQsub", true),
     iterToTerminal: vscode.workspace.getConfiguration("shellbook").get("codelens.iterToTerminal", true),
     iterFile: vscode.workspace.getConfiguration("shellbook").get("codelens.iterFile", true),
+    runInIndependentShell: vscode.workspace.getConfiguration("shellbook").get("runInIndependentShell", true),
   
 };
 
@@ -24,6 +25,7 @@ export function updateSettings() {
         sendToQsub: vscode.workspace.getConfiguration("shellbook").get("codelens.sendToQsub", true),
         iterToTerminal: vscode.workspace.getConfiguration("shellbook").get("codelens.iterToTerminal", true),
         iterFile: vscode.workspace.getConfiguration("shellbook").get("codelens.iterFile", true),
+        runInIndependentShell: vscode.workspace.getConfiguration("shellbook").get("runInIndependentShell", true),
       
     };
 }

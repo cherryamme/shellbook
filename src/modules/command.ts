@@ -35,7 +35,10 @@ export function createQuickPick() {
 
 export async function sendToTerminal(uri: vscode.Uri, range: vscode.Range) {
     const document = await vscode.workspace.openTextDocument(uri);
-    const codeBlock = "(" + document.getText(range) + "\n)";
+    const code = document.getText(range);
+    const codeBlock = settings.runInIndependentShell 
+        ? "(" + code + "\n)"
+        : "{" + code + "\n}";
 
     const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
     log.appendLine(`\nSending to terminal: ${codeBlock}`);
@@ -74,7 +77,9 @@ export async function iterToTerminal(uri: vscode.Uri, range: vscode.Range, first
     // 提取变量名和值，去除空格
     const variableName = match[1].trim();
     const variableValue = match[2].trim();
-    const modifiedCode = `(# Iter code: ${input}\nfor ${variableName} in ${variableValue};do\n ${code}\ndone\n)`;
+    const bracketStart = settings.runInIndependentShell ? "(" : "{";
+    const bracketEnd = settings.runInIndependentShell ? ")" : "}";
+    const modifiedCode = `${bracketStart}# Iter code: ${input}\nfor ${variableName} in ${variableValue};do\n ${code}\ndone\n${bracketEnd}`;
     // 插入用户输入到原文件中
     const edit = new vscode.WorkspaceEdit();
     const position = new vscode.Position(range.start.line + 1, 0); // 在选定范围下方一行的起始位置插入
@@ -119,7 +124,9 @@ export async function iterFile(uri: vscode.Uri, range: vscode.Range, firstWord: 
     // Join the array back into a space-separated string for use in the shell script
     const variables = variablesArray.join(' ');
 
-    const modifiedCode = `(# Iterfile: ${filePath}\n while read ${variables} _ ;do\n ${code}\ndone < ${filePath}\n)`;
+    const bracketStart = settings.runInIndependentShell ? "(" : "{";
+    const bracketEnd = settings.runInIndependentShell ? ")" : "}";
+    const modifiedCode = `${bracketStart}# Iterfile: ${filePath}\n while read ${variables} _ ;do\n ${code}\ndone < ${filePath}\n${bracketEnd}`;
 
     // 插入用户输入到原文件中
     const edit = new vscode.WorkspaceEdit();

@@ -93,8 +93,9 @@ export class RunShellCodeLensProvider implements vscode.CodeLensProvider {
 }
 
 const codeChunkDecorationType = vscode.window.createTextEditorDecorationType({
-  backgroundColor: settings.chunkbackgroudcolor || "rgba(56, 56, 56, 0.3)",
-  borderRadius: '0px',
+  backgroundColor: settings.chunkbackgroudcolor || "rgba(56, 56, 56, 0.1)",
+  border: "1px solid rgba(56, 56, 56, 0.2)",
+  borderRadius: '3px',
   isWholeLine: true
 });
 

@@ -3,7 +3,7 @@
   "publisher": "cherryamme",
   "displayName": "Shell Book",
   "description": "让你的shell脚本像notebook一样好用，显示codechunk，添加snippets，增强shell脚本开发体验，快速执行自定义指令",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "icon": "assets/Shellbook.png",
   "repository": {
     "type": "git",
@@ -59,6 +59,11 @@
         "type": "boolean",
         "default": true,
         "description": "Enable code lens for iterative file-based runs."
+      },
+      "shellbook.runInIndependentShell": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to run the code block in an independent shell. If checked, use parentheses (); otherwise, use curly braces {}.。"
       },
         "shellbook.chunkbackgroudcolor": {
           "type": "string",
